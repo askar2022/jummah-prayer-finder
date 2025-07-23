@@ -3,6 +3,14 @@ import './globals.css';
 export const metadata = {
   title: 'Jummah Prayer Finder',
   description: 'Find mosques and Jummah prayer times in your area',
+  manifest: '/manifest.json',
+  themeColor: '#0d9488',
+  viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Jummah Finder',
+  },
 };
 
 export default function RootLayout({

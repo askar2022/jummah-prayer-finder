@@ -10,6 +10,7 @@ import NearMeButton from './components/NearMeButton';
 import masjidData from '../data/masjids.json';
 import DateTimeDisplay from './components/DateTimeDisplay';
 import AddMasjidCard from './components/AddMasjidCard';
+import PWAInstaller from './components/PWAInstaller';
 import { sortMasjidsByDistance } from '../utils/locationUtils';
 // import TestStyles from './test-styles'; // Temporary test component
 
@@ -111,6 +112,8 @@ export default function Page() {
       )}
 
       <DateTimeDisplay />
+
+      <PWAInstaller />
 
       <SearchBar
         searchTerm={searchTerm}

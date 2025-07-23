@@ -1,0 +1,49 @@
+{
+  "name": "Jummah Prayer Finder",
+  "short_name": "Jummah Finder",
+  "description": "Find mosques and Jummah prayer times in Minnesota",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d9488",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["lifestyle", "utilities"],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Jummah Prayer Finder Desktop View"
+    },
+    {
+      "src": "/images/screenshot-mobile.png", 
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Jummah Prayer Finder Mobile View"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/logo.JPG",
+      "sizes": "256x256",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+} 
