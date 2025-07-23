@@ -9,7 +9,7 @@
     "longitude": -93.2650,
     "khudba": ["Imam Kareem", "Imam Abdullah"],
     "image": "/images/MasjidNames/Al-Nur.jfif",
-    "notes": "Historic mosque in South Minneapolis with beautiful architecture",
+    "notes": "Historic masjid in South Minneapolis with beautiful architecture",
     "prayers": {
       "fajr": "5:00 AM",
       "dhuhr": "1:00 PM",
@@ -66,7 +66,7 @@
     "longitude": -93.2678,
     "khudba": ["Imam Tawfiq"],
     "image": "/images/MasjidNames/Tawfiq.jfif",
-    "notes": "Welcoming community mosque with strong family focus",
+    "notes": "Welcoming community masjid with strong family focus",
     "prayers": {
       "fajr": "5:05 AM",
       "dhuhr": "1:10 PM",
@@ -115,7 +115,7 @@
   },
   {
     "id": 7,
-    "name": "Burnsville Mosque",
+    "name": "Burnsville Masjid",
     "jummha": ["12:00 PM"],
     "address": "1351 Riverwood Dr, Burnsville, MN 55337",
     "city": "Burnsville",
@@ -123,7 +123,7 @@
     "longitude": -93.2777,
     "khudba": ["Imam Hassan"],
     "image": "/images/MasjidNames/placeholder.jpg",
-    "notes": "Community mosque in Burnsville",
+    "notes": "Community masjid in Burnsville",
     "prayers": {
       "fajr": "5:00 AM",
       "dhuhr": "1:00 PM",
@@ -180,7 +180,7 @@
     "longitude": -93.2632,
     "khudba": ["Imam Ahmad"],
     "image": "/images/MasjidNames/placeholder.jpg",
-    "notes": "Community mosque in Fridley",
+    "notes": "Community masjid in Fridley",
     "prayers": {
       "fajr": "5:00 AM",
       "dhuhr": "1:00 PM",
@@ -191,7 +191,7 @@
   },
   {
     "id": 11,
-    "name": "Nurul-Iman Mosque",
+    "name": "Nurul-Iman Masjid",
     "jummha": ["12:00 PM"],
     "address": "2222 Park Ave, Minneapolis, MN 55404",
     "city": "Minneapolis",
@@ -286,7 +286,7 @@
   },
   {
     "id": 16,
-    "name": "Abu Huraira Mosque",
+    "name": "Abu Huraira Masjid",
     "jummha": ["12:00 PM"],
     "address": "3055 Old Hwy 8, Minneapolis, MN 55418",
     "city": "Minneapolis",
@@ -294,7 +294,7 @@
     "longitude": -93.2533,
     "khudba": ["Imam Ali"],
     "image": "/images/MasjidNames/placeholder.jpg",
-    "notes": "Community mosque in northeast Minneapolis",
+    "notes": "Community masjid in northeast Minneapolis",
     "prayers": {
       "fajr": "5:00 AM",
       "dhuhr": "1:00 PM",
@@ -324,7 +324,7 @@
   },
   {
     "id": 18,
-    "name": "Al-Ihsan Mosque",
+    "name": "Al-Ihsan Masjid",
     "jummha": ["12:00 PM"],
     "address": "955 W Minnehaha Ave, St Paul, MN 55104",
     "city": "St. Paul",

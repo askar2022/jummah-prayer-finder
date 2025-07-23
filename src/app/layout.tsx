@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Jummah Prayer Finder',
-  description: 'Find mosques and Jummah prayer times in your area',
+  description: 'Find masjids and Jummah prayer times in your area',
   manifest: '/manifest.json',
   themeColor: '#0d9488',
   viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
@@ -34,9 +34,9 @@ export default function RootLayout({
                   <h1 className="text-3xl font-bold text-teal-700 leading-tight">
                     Jummah Prayer Finder
                   </h1>
-                  <p className="text-sm text-teal-600 font-medium">
-                    Find mosques and prayer times in your area
-                  </p>
+                                <p className="text-sm text-teal-600 font-medium">
+                Find masjids and prayer times in your area
+              </p>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function RootLayout({
               <div>
                 <h3 className="text-xl font-bold mb-4">Jummah Prayer Finder</h3>
                 <p className="text-gray-300 mb-4 leading-relaxed">
-                  Helping the Muslim community in Minnesota find accurate Jummah prayer times at local mosques. Built with care for our ummah.
+                  Helping the Muslim community in Minnesota find accurate Jummah prayer times at local masjids. Built with care for our ummah.
                 </p>
                 <div className="flex items-center gap-2 text-pink-400">
                   <span className="text-sm">❤️</span>
@@ -70,7 +70,7 @@ export default function RootLayout({
                       className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200"
                     >
                       <span className="text-sm">🔍</span>
-                      Search Mosques
+                      Search Masjids
                     </a>
                   </li>
                   <li>
@@ -79,7 +79,7 @@ export default function RootLayout({
                       className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200"
                     >
                       <span className="text-sm">⚙️</span>
-                      Manage Your Mosque
+                      Manage Your Masjid
                     </a>
                   </li>
                   <li>
@@ -96,14 +96,14 @@ export default function RootLayout({
                 </ul>
               </div>
 
-              {/* For Mosque Admins */}
+              {/* For App Admins */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-lg text-teal-400">🛡️</span>
-                  <h4 className="text-lg font-semibold">For Mosque Admins</h4>
+                  <h4 className="text-lg font-semibold">For App Admins</h4>
                 </div>
                 <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                  Manage your mosque's prayer times and information with our secure admin panel.
+                  Manage app content and masjid information with our secure admin panel.
                 </p>
                 <a
                   href="/admin"

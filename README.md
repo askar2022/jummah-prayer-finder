@@ -1,6 +1,6 @@
 # Jummah Prayer Finder 🌻
 
-A modern Next.js application to help Muslims find local mosque Jummah (Friday) prayer times and other daily prayers.
+A modern Next.js application to help Muslims find local masjid Jummah (Friday) prayer times and other daily prayers.
 
 ## Features
 

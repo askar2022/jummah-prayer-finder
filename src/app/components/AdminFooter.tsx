@@ -11,9 +11,9 @@ export default function AdminFooter() {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">Jummah Times MN</h3>
-            <p className="text-gray-300 mb-4 leading-relaxed">
-              Helping the Muslim community in Minnesota find accurate Jummah prayer times at local mosques. Built with care for our ummah.
-            </p>
+                    <p className="text-gray-300 mb-4 leading-relaxed">
+          Helping the Muslim community in Minnesota find accurate Jummah prayer times at local masjids. Built with care for our ummah.
+        </p>
             <div className="flex items-center gap-2 text-pink-400">
               <Heart className="w-4 h-4" />
               <span className="text-sm">Made for the community</span>
@@ -29,8 +29,8 @@ export default function AdminFooter() {
                   href="#"
                   className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  <Search className="w-4 h-4" />
-                  Search Mosques
+                                      <Search className="w-4 h-4" />
+                    Search Masjids
                 </a>
               </li>
               <li>
@@ -39,7 +39,7 @@ export default function AdminFooter() {
                   className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200"
                 >
                   <Settings className="w-4 h-4" />
-                  Manage Your Mosque
+                  Manage Your Masjid
                 </a>
               </li>
               <li>
@@ -56,14 +56,14 @@ export default function AdminFooter() {
             </ul>
           </div>
 
-          {/* For Mosque Admins */}
+          {/* For App Admins */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Shield className="w-5 h-5 text-teal-400" />
-              <h4 className="text-lg font-semibold">For Mosque Admins</h4>
+              <h4 className="text-lg font-semibold">For App Admins</h4>
             </div>
             <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-              Manage your mosque's prayer times and information with our secure admin panel.
+              Manage app content and masjid information with our secure admin panel.
             </p>
             <button className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">
               <Settings className="w-4 h-4" />

@@ -11,7 +11,7 @@ function WelcomeMessage() {
       <Card className="text-center">
         <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">Welcome to Jummah Prayer Finder</h2>
         <p className="text-gray-600 mb-6">
-          Find mosques and prayer times using multiple search methods below.
+          Find masjids and prayer times using multiple search methods below.
         </p>
         
         {/* Search Methods */}

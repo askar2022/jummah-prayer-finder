@@ -12,7 +12,7 @@ export default function AdminDashboard() {
         {/* Welcome Header */}
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-          <p className="text-gray-600">Manage your mosque's information and prayer times</p>
+          <p className="text-gray-600">Manage your masjid's information and prayer times</p>
         </div>
 
         {/* Quick Stats */}
@@ -35,7 +35,7 @@ export default function AdminDashboard() {
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Mosque Info</h3>
+                <h3 className="font-semibold text-gray-900">Masjid Info</h3>
                 <p className="text-sm text-gray-600">Update details & location</p>
               </div>
             </div>
@@ -83,15 +83,15 @@ export default function AdminDashboard() {
             </button>
           </Card>
 
-          {/* Mosque Information */}
+          {/* Masjid Information */}
           <Card className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-gray-900">Mosque Information</h2>
+              <h2 className="text-xl font-semibold text-gray-900">Masjid Information</h2>
               <Settings className="w-5 h-5 text-blue-600" />
             </div>
             <div className="space-y-3">
               <div>
-                <label className="text-sm font-medium text-gray-700">Mosque Name</label>
+                <label className="text-sm font-medium text-gray-700">Masjid Name</label>
                 <p className="text-gray-900">Masjid Al-Noor</p>
               </div>
               <div>
@@ -120,7 +120,7 @@ export default function AdminDashboard() {
             </div>
             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
               <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-sm text-gray-700">Mosque information updated</span>
+                                  <span className="text-sm text-gray-700">Masjid information updated</span>
               <span className="text-xs text-gray-500 ml-auto">1 day ago</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">

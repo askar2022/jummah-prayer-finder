@@ -5,12 +5,10 @@ import SearchBar from './components/SearchBar';
 import MasjidList from './components/MasjidList';
 import WelcomeMessage from './components/WelcomeMessage';
 import NoResultsMessage from './components/NoResultsMessage';
-import CityFilter from './components/CityFilter';
-import NearMeButton from './components/NearMeButton';
 import masjidData from '../data/masjids.json';
 import DateTimeDisplay from './components/DateTimeDisplay';
 import AddMasjidCard from './components/AddMasjidCard';
-import PWAInstaller from './components/PWAInstaller';
+import CompactToolbar from './components/CompactToolbar';
 import { sortMasjidsByDistance } from '../utils/locationUtils';
 // import TestStyles from './test-styles'; // Temporary test component
 
@@ -113,7 +111,13 @@ export default function Page() {
 
       <DateTimeDisplay />
 
-      <PWAInstaller />
+      <CompactToolbar
+        onLocationFound={handleLocationFound}
+        isNearMeActive={isNearMeActive}
+        selectedCity={selectedCity}
+        onCityChange={handleCityChange}
+        cities={cities}
+      />
 
       <SearchBar
         searchTerm={searchTerm}
@@ -121,17 +125,6 @@ export default function Page() {
         setFiltered={setFiltered}
         setIsSearching={setIsSearching}
         data={getFilteredData()}
-      />
-
-      <NearMeButton 
-        onLocationFound={handleLocationFound}
-        isActive={isNearMeActive}
-      />
-
-      <CityFilter
-        selectedCity={selectedCity}
-        onCityChange={handleCityChange}
-        cities={cities}
       />
 
       {!isSearching && !selectedCity && !isNearMeActive && <WelcomeMessage />}
@@ -142,16 +135,6 @@ export default function Page() {
       )}
 
       <AddMasjidCard />
-
-      {/* Admin Access Link */}
-      <div className="text-center mt-6">
-        <a
-          href="/admin"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
-        >
-          🔐 Admin Panel
-        </a>
-      </div>
     </div>
   );
 }

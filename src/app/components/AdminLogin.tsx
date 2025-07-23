@@ -27,7 +27,7 @@ export default function AdminLogin() {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Admin Access</h2>
             <p className="text-gray-600">
-              Sign in to manage your mosque's prayer times and information
+              Sign in to manage your masjid's prayer times and information
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function AdminLogin() {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@mosque.org"
+                  placeholder="admin@masjid.org"
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors"
                   required
                 />

@@ -8,6 +8,18 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* Back to App Button */}
+      <div className="bg-white shadow-sm border-b border-gray-200 p-4">
+        <div className="max-w-4xl mx-auto">
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+          >
+            ← Back to Prayer Finder
+          </a>
+        </div>
+      </div>
+
       {/* Main Content */}
       <main className="flex-1">
         {showLogin ? (
