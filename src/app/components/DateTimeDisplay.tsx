@@ -33,16 +33,16 @@ export default function DateTimeDisplay() {
   });
 
   return (
-    <Container className="my-3">
-      <div className="bg-white rounded-lg shadow-sm p-3 border border-gray-100">
-        <div className="flex items-center justify-between gap-3">
+    <Container className="my-2 sm:my-3">
+      <div className="bg-white rounded-lg shadow-sm p-2 sm:p-3 border border-gray-100">
+        <div className="flex items-center justify-between gap-2 sm:gap-3">
           {/* Left: Time with Icon */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
-              <span className="text-sm text-teal-600">🕐</span>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-teal-100 rounded-full flex items-center justify-center">
+              <span className="text-xs sm:text-sm text-teal-600">🕐</span>
             </div>
             <div>
-              <div className="text-lg font-bold text-teal-600 leading-tight">
+              <div className="text-sm sm:text-lg font-bold text-teal-600 leading-tight">
                 {formattedTime}
               </div>
               <div className="text-xs font-medium text-teal-500">
@@ -53,7 +53,7 @@ export default function DateTimeDisplay() {
           
           {/* Right: Hijri Date */}
           <div className="text-right">
-            <div className="text-sm font-semibold text-teal-600">
+            <div className="text-xs sm:text-sm font-semibold text-teal-600">
               {hijriDate}
             </div>
           </div>

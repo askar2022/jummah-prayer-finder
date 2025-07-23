@@ -109,22 +109,24 @@ export default function CompactToolbar({
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 mb-4 px-4">
+    <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2 mb-3 sm:mb-4 px-2 sm:px-4">
       {/* PWA Install Button */}
       {isInstalled ? (
-        <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+        <div className="bg-green-100 text-green-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1">
           <span>✅</span>
-          <span>App Installed</span>
+          <span className="hidden sm:inline">App Installed</span>
+          <span className="sm:hidden">Installed</span>
         </div>
       ) : (
         <button
           onClick={isInstallable ? handleInstallClick : () => {
             alert('To install this app:\n\n📱 On Mobile: Look for "Add to Home Screen" in your browser menu\n💻 On Desktop: Look for the install icon in your address bar\n\nOr visit this site in Chrome/Safari for the best install experience!');
           }}
-          className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 transition-colors"
+          className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1 transition-colors"
         >
           <span>📱</span>
-          <span>{isInstallable ? 'Install App' : 'Add to Home'}</span>
+          <span className="hidden sm:inline">{isInstallable ? 'Install App' : 'Add to Home'}</span>
+          <span className="sm:hidden">Install</span>
         </button>
       )}
 
@@ -132,7 +134,7 @@ export default function CompactToolbar({
       <button
         onClick={handleNearMeClick}
         disabled={isLocating || isNearMeActive}
-        className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 transition-colors ${
+        className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1 transition-colors ${
           isNearMeActive
             ? 'bg-teal-100 text-teal-800'
             : isLocating
@@ -151,7 +153,7 @@ export default function CompactToolbar({
         <select
           value={selectedCity}
           onChange={(e) => onCityChange(e.target.value)}
-          className="bg-orange-100 hover:bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-sm font-medium border-none outline-none cursor-pointer appearance-none pr-8"
+          className="bg-orange-100 hover:bg-orange-200 text-orange-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium border-none outline-none cursor-pointer appearance-none pr-6 sm:pr-8"
         >
           <option value="">🏙️ Filter by All Cities</option>
           {cities.map((city) => (
@@ -160,7 +162,7 @@ export default function CompactToolbar({
             </option>
           ))}
         </select>
-        <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+        <div className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
           <span className="text-orange-800 text-xs">▼</span>
         </div>
       </div>

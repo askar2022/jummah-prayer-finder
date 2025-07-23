@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import SearchBar from './components/SearchBar';
 import MasjidList from './components/MasjidList';
-import WelcomeMessage from './components/WelcomeMessage';
 import NoResultsMessage from './components/NoResultsMessage';
 import masjidData from '../data/masjids.json';
 import DateTimeDisplay from './components/DateTimeDisplay';
@@ -99,21 +98,27 @@ export default function Page() {
   // return <TestStyles />;
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8 max-w-4xl">
       {randomImage && (
-        <div className="text-center mb-6">
+        <div className="text-center mb-4 sm:mb-6">
           <Image
             src={`/images/Masjids/${randomImage}`}
             alt="Masjid"
             width={800}
             height={400}
-            className="max-w-full rounded-xl shadow-lg mx-auto"
+            className="max-w-full h-32 sm:h-auto rounded-xl shadow-lg mx-auto object-cover"
             style={{ height: 'auto' }}
           />
         </div>
       )}
 
       <DateTimeDisplay />
+      
+      <div className="text-center mb-3 sm:mb-4">
+        <p className="text-xs sm:text-sm text-gray-600 font-medium">
+          Find masjids and prayer times using multiple search methods below.
+        </p>
+      </div>
 
       <CompactToolbar
         onLocationFound={handleLocationFound}
@@ -131,7 +136,7 @@ export default function Page() {
         data={getFilteredData()}
       />
 
-      {!isSearching && !selectedCity && !isNearMeActive && <WelcomeMessage />}
+      {!isSearching && !selectedCity && !isNearMeActive && <MasjidList masjids={getFilteredData()} userLocation={userLocation} />}
       {!isSearching && (selectedCity || isNearMeActive) && <MasjidList masjids={getFilteredData()} userLocation={userLocation} />}
       {isSearching && filtered.length > 0 && <MasjidList masjids={filtered} userLocation={userLocation} />}
       {isSearching && filtered.length === 0 && (

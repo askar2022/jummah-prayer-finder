@@ -24,23 +24,23 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-50 text-gray-900 font-sans">
         <header className="bg-white shadow-md border-b border-gray-100">
-          <div className="max-w-4xl mx-auto py-4 px-4">
+          <div className="max-w-4xl mx-auto py-2 sm:py-4 px-3 sm:px-4">
             <div className="text-center">
-              <div className="flex items-center justify-center gap-3 mb-1">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 mb-1">
                 <Image 
                   src="/images/logo.JPG" 
                   alt="Jummah Prayer Finder Logo" 
-                  width={56}
-                  height={56}
-                  className="object-contain"
+                  width={40}
+                  height={40}
+                  className="object-contain sm:w-14 sm:h-14"
                 />
                 <div>
-                  <h1 className="text-3xl font-bold text-teal-700 leading-tight">
+                  <h1 className="text-xl sm:text-3xl font-bold text-teal-700 leading-tight">
                     Jummah Prayer Finder
                   </h1>
-                                <p className="text-sm text-teal-600 font-medium">
-                Find masjids and prayer times in your area
-              </p>
+                  <p className="text-xs sm:text-sm text-teal-600 font-medium">
+                    Find masjids and prayer times in your area
+                  </p>
                 </div>
               </div>
             </div>

@@ -65,11 +65,11 @@ function SearchBar({ searchTerm, setSearchTerm, setFiltered, setIsSearching, dat
   };
 
   return (
-    <Container className="mb-6">
-      <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-lg border border-teal-200">
+    <Container className="mb-4 sm:mb-6">
+      <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-4 bg-white rounded-xl shadow-lg border border-teal-200">
         {/* Search Icon */}
         <div className="text-teal-500">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
@@ -78,16 +78,16 @@ function SearchBar({ searchTerm, setSearchTerm, setFiltered, setIsSearching, dat
         <input
           type="text"
           value={searchTerm}
-          placeholder="Search by prayer time or masjid name..."
+          placeholder="Search prayer time or masjid..."
           onChange={(e) => setSearchTerm(e.target.value.trimStart())}
           onKeyDown={handleKeyPress}
-          className="flex-1 px-2 py-1 text-gray-900 placeholder:text-gray-400 border-none outline-none bg-transparent"
+          className="flex-1 px-1 sm:px-2 py-1 text-sm sm:text-base text-gray-900 placeholder:text-gray-400 border-none outline-none bg-transparent"
         />
         
         {/* Search Button */}
         <button 
           onClick={handleSearch} 
-          className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-200"
+          className="bg-teal-500 hover:bg-teal-600 text-white px-3 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm font-medium transition-all duration-200"
         >
           Search
         </button>
@@ -95,15 +95,15 @@ function SearchBar({ searchTerm, setSearchTerm, setFiltered, setIsSearching, dat
       
       {/* Clear button when searching */}
       {searchTerm && (
-        <div className="mt-3 text-center">
+        <div className="mt-2 sm:mt-3 text-center">
           <button 
             onClick={clearSearch} 
-            className="text-sm text-gray-500 hover:text-gray-700 underline"
+            className="text-xs sm:text-sm text-gray-500 hover:text-gray-700 underline"
           >
             ✕ Clear search
           </button>
         </div>
-              )}
+      )}
     </Container>
   );
 }
