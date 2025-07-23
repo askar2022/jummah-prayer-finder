@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import AdminLogin from '../components/AdminLogin';
 
 export default function AdminPage() {
@@ -11,12 +12,12 @@ export default function AdminPage() {
       {/* Back to App Button */}
       <div className="bg-white shadow-sm border-b border-gray-200 p-4">
         <div className="max-w-4xl mx-auto">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
           >
             ← Back to Prayer Finder
-          </a>
+          </Link>
         </div>
       </div>
 

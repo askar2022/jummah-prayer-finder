@@ -1,4 +1,6 @@
 import './globals.css';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Jummah Prayer Finder',
@@ -25,10 +27,12 @@ export default function RootLayout({
           <div className="max-w-4xl mx-auto py-4 px-4">
             <div className="text-center">
               <div className="flex items-center justify-center gap-3 mb-1">
-                <img 
+                <Image 
                   src="/images/logo.JPG" 
                   alt="Jummah Prayer Finder Logo" 
-                  className="w-14 h-14 object-contain"
+                  width={56}
+                  height={56}
+                  className="object-contain"
                 />
                 <div>
                   <h1 className="text-3xl font-bold text-teal-700 leading-tight">
@@ -65,22 +69,22 @@ export default function RootLayout({
                 <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-3">
                   <li>
-                    <a
+                    <Link
                       href="/"
                       className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200"
                     >
                       <span className="text-sm">🔍</span>
                       Search Masjids
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/admin"
                       className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200"
                     >
                       <span className="text-sm">⚙️</span>
                       Manage Your Masjid
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
@@ -105,13 +109,13 @@ export default function RootLayout({
                 <p className="text-gray-300 mb-4 text-sm leading-relaxed">
                   Manage app content and masjid information with our secure admin panel.
                 </p>
-                <a
+                <Link
                   href="/admin"
                   className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 text-sm font-medium"
                 >
                   <span className="text-sm">⚙️</span>
                   Admin Panel
-                </a>
+                </Link>
               </div>
             </div>
 

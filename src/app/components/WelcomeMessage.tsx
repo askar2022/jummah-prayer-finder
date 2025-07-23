@@ -3,7 +3,6 @@
 import React from 'react';
 import Card from './UI/Card';
 import Container from './UI/Container';
-import SectionTitle from './UI/SectionTitle';
 
 function WelcomeMessage() {
   return (
@@ -36,7 +35,7 @@ function WelcomeMessage() {
               <h3 className="font-semibold text-teal-800">Near Me</h3>
             </div>
             <p className="text-sm text-gray-700">
-              Click <strong className="text-teal-600">"Show Near Me"</strong> to find the closest masjids with real distances from your location.
+              Click <strong className="text-teal-600">'Show Near Me'</strong> to find the closest masjids with real distances from your location.
             </p>
           </div>
 
@@ -58,7 +57,7 @@ function WelcomeMessage() {
               <h3 className="font-semibold text-orange-800">Missing Masjid?</h3>
             </div>
             <p className="text-sm text-gray-700">
-              Don't see your masjid? Help the community by <strong className="text-orange-600">submitting it</strong> using the form below.
+              Do not see your masjid? Help the community by <strong className="text-orange-600">submitting it</strong> using the form below.
             </p>
           </div>
         </div>

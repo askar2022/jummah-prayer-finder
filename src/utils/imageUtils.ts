@@ -12,14 +12,6 @@ export const normalizeNameForImage = (name: string): string => {
 };
 
 export const findMasjidImage = (masjidName: string): string => {
-  // Available image files in MasjidNames folder
-  const availableImages = [
-    'Abubakar-Islamic-Center.webp',
-    'Al-Nur.jfif',
-    'alfurqan.jfif',
-    'Tawfiq.jfif'
-  ];
-
   // Try to match the normalized name to available images
   const normalizedName = normalizeNameForImage(masjidName);
   

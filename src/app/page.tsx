@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import SearchBar from './components/SearchBar';
 import MasjidList from './components/MasjidList';
 import WelcomeMessage from './components/WelcomeMessage';
@@ -101,10 +102,13 @@ export default function Page() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       {randomImage && (
         <div className="text-center mb-6">
-          <img
+          <Image
             src={`/images/Masjids/${randomImage}`}
             alt="Masjid"
+            width={800}
+            height={400}
             className="max-w-full rounded-xl shadow-lg mx-auto"
+            style={{ height: 'auto' }}
           />
         </div>
       )}
