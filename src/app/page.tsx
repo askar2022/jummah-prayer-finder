@@ -136,7 +136,13 @@ export default function Page() {
         data={getFilteredData()}
       />
 
-      {!isSearching && !selectedCity && !isNearMeActive && <MasjidList masjids={getFilteredData()} userLocation={userLocation} />}
+      {!isSearching && !selectedCity && !isNearMeActive && (
+        <div className="text-center py-8 sm:py-12">
+          <div className="text-4xl sm:text-6xl mb-4">🕌</div>
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">Ready to find your masjid?</h3>
+          <p className="text-sm sm:text-base text-gray-500 mb-4">Use the search bar, select a city, or find masjids near you</p>
+        </div>
+      )}
       {!isSearching && (selectedCity || isNearMeActive) && <MasjidList masjids={getFilteredData()} userLocation={userLocation} />}
       {isSearching && filtered.length > 0 && <MasjidList masjids={filtered} userLocation={userLocation} />}
       {isSearching && filtered.length === 0 && (
