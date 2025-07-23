@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import AdminLogin from '../components/AdminLogin';
 
 export default function AdminPage() {
-  const [showLogin, setShowLogin] = useState(true);
+  const showLogin = true;
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">

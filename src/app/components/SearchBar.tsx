@@ -3,12 +3,32 @@
 import React from 'react';
 import Container from './UI/Container';
 
+interface Masjid {
+  id: number;
+  name: string;
+  jummha: string[];
+  address: string;
+  city: string;
+  latitude: number;
+  longitude: number;
+  khudba: string[];
+  image: string;
+  notes: string;
+  prayers: {
+    fajr: string;
+    dhuhr: string;
+    asr: string;
+    maghrib: string;
+    isha: string;
+  };
+}
+
 interface Props {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  setFiltered: (results: any[]) => void;
+  setFiltered: (results: Masjid[]) => void;
   setIsSearching: (isSearching: boolean) => void;
-  data: any[];
+  data: Masjid[];
 }
 
 function SearchBar({ searchTerm, setSearchTerm, setFiltered, setIsSearching, data }: Props) {

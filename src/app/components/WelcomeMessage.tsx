@@ -35,7 +35,7 @@ function WelcomeMessage() {
               <h3 className="font-semibold text-teal-800">Near Me</h3>
             </div>
             <p className="text-sm text-gray-700">
-              Click <strong className="text-teal-600">'Show Near Me'</strong> to find the closest masjids with real distances from your location.
+              Click <strong className="text-teal-600">&apos;Show Near Me&apos;</strong> to find the closest masjids with real distances from your location.
             </p>
           </div>
 

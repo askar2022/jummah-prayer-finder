@@ -15,7 +15,7 @@ export default function AddMasjidCard() {
             <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
               <span className="text-xl">🕌</span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900">Can't find your masjid?</h3>
+            <h3 className="text-xl font-bold text-gray-900">Can&apos;t find your masjid?</h3>
           </div>
           {/* Submit button in top right */}
           <a

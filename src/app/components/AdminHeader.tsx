@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Search, User, Settings } from 'lucide-react';
+import { Search, Settings } from 'lucide-react';
 
 interface AdminHeaderProps {
   onSearchClick?: () => void;

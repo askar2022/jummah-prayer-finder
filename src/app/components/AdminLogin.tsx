@@ -27,7 +27,7 @@ export default function AdminLogin() {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Admin Access</h2>
             <p className="text-gray-600">
-              Sign in to manage your masjid's prayer times and information
+              Sign in to manage your masjid&apos;s prayer times and information
             </p>
           </div>
 
