@@ -1,0 +1,23 @@
+.no-results {
+    text-align: center;
+    margin-top: 2rem;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  .clear-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .clear-button:hover {
+    background-color: #d32f2f;
+  }
+  

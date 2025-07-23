@@ -1,0 +1,953 @@
+[
+  {
+    "id": 1,
+    "name": "Masjid Al-Noor",
+    "jummha": ["12:30 PM", "1:45 PM"],
+    "address": "123 Main St",
+    "city": "Minneapolis",
+    "latitude": 44.9778,
+    "longitude": -93.2650,
+    "khudba": ["Imam Kareem", "Imam Abdullah"],
+    "image": "/images/MasjidNames/Al-Nur.jfif",
+    "notes": "Historic mosque in South Minneapolis with beautiful architecture",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:45 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Abubakar Islamic Center",
+    "jummha": ["12:00 PM", "1:15 PM", "2:30 PM"],
+    "address": "456 Oak Ave",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.0900,
+    "khudba": ["Dr. Ahmad", "Imam Hassan", "Dr. Omar"],
+    "image": "/images/MasjidNames/Abubakar-Islamic-Center.webp",
+    "notes": "Large community center with multiple prayer halls and educational programs",
+    "prayers": {
+      "fajr": "4:50 AM",
+      "dhuhr": "12:45 PM",
+      "asr": "4:45 PM",
+      "maghrib": "8:30 PM",
+      "isha": "9:45 PM"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Masjid Al-Furqan",
+    "jummha": ["1:00 PM", "2:15 PM"],
+    "address": "789 Pine Rd",
+    "city": "Bloomington",
+    "latitude": 44.8308,
+    "longitude": -93.2982,
+    "khudba": ["Ustadh Yusuf", "Imam Malik"],
+    "image": "/images/MasjidNames/alfurqan.jfif",
+    "notes": "Active youth programs and community outreach initiatives",
+    "prayers": {
+      "fajr": "5:10 AM",
+      "dhuhr": "1:15 PM",
+      "asr": "5:10 PM",
+      "maghrib": "8:50 PM",
+      "isha": "10:15 PM"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Masjid Tawfiq",
+    "jummha": ["12:45 PM"],
+    "address": "321 Elm Street",
+    "city": "Minneapolis",
+    "latitude": 44.9635,
+    "longitude": -93.2678,
+    "khudba": ["Imam Tawfiq"],
+    "image": "/images/MasjidNames/Tawfiq.jfif",
+    "notes": "Welcoming community mosque with strong family focus",
+    "prayers": {
+      "fajr": "5:05 AM",
+      "dhuhr": "1:10 PM",
+      "asr": "5:05 PM",
+      "maghrib": "8:40 PM",
+      "isha": "10:05 PM"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Al Rahman Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "8910 Old Cedar Ave S #2049, Bloomington, MN 55425",
+    "city": "Bloomington",
+    "latitude": 44.8205,
+    "longitude": -93.2982,
+    "khudba": ["Imam Mohammad"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Community center serving the Bloomington area",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Brooklyn Park Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "2100 93rd Way, Brooklyn Park, MN 55444",
+    "city": "Brooklyn Park",
+    "latitude": 45.1094,
+    "longitude": -93.3563,
+    "khudba": ["Imam Abdullah"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Serving the Brooklyn Park community",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Burnsville Mosque",
+    "jummha": ["12:00 PM"],
+    "address": "1351 Riverwood Dr, Burnsville, MN 55337",
+    "city": "Burnsville",
+    "latitude": 44.7677,
+    "longitude": -93.2777,
+    "khudba": ["Imam Hassan"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Community mosque in Burnsville",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 8,
+    "name": "MAS South Metro Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "15400 S Robert Trail, Rosemount, MN 55068",
+    "city": "Rosemount",
+    "latitude": 44.7391,
+    "longitude": -93.1257,
+    "khudba": ["Dr. Omar"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Large Islamic center serving the south metro area",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Maple Grove Masjid",
+    "jummha": ["12:00 PM"],
+    "address": "10186 Lancaster Ln N, Maple Grove, MN 55369",
+    "city": "Maple Grove",
+    "latitude": 45.0724,
+    "longitude": -93.4558,
+    "khudba": ["Imam Yusuf"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Serving the Maple Grove community",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Masjid Al-Israa",
+    "jummha": ["12:00 PM"],
+    "address": "6831 Hwy 65 NE, Fridley, MN 55432",
+    "city": "Fridley",
+    "latitude": 45.0863,
+    "longitude": -93.2632,
+    "khudba": ["Imam Ahmad"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Community mosque in Fridley",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Nurul-Iman Mosque",
+    "jummha": ["12:00 PM"],
+    "address": "2222 Park Ave, Minneapolis, MN 55404",
+    "city": "Minneapolis",
+    "latitude": 44.9537,
+    "longitude": -93.2650,
+    "khudba": ["Imam Ibrahim"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Downtown Minneapolis Islamic center",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Masjid Al-Tawba",
+    "jummha": ["12:00 PM"],
+    "address": "6871 Flying Cloud Dr, Eden Prairie, MN 55344",
+    "city": "Eden Prairie",
+    "latitude": 44.8547,
+    "longitude": -93.4210,
+    "khudba": ["Imam Khalid"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Serving the Eden Prairie community",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Tawhid Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "1001 Westgate Dr, St Paul, MN 55114",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.0900,
+    "khudba": ["Dr. Malik"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Islamic center in St. Paul",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Minnesota Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "12119 16th Ave S, Burnsville, MN 55337",
+    "city": "Burnsville",
+    "latitude": 44.7677,
+    "longitude": -93.2777,
+    "khudba": ["Imam Rahman"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Major Islamic center in Burnsville",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 15,
+    "name": "ICBMN - Islamic Community of Bosniaks",
+    "jummha": ["12:00 PM"],
+    "address": "668 Broadway St NE, Minneapolis, MN 55413",
+    "city": "Minneapolis",
+    "latitude": 44.9984,
+    "longitude": -93.2533,
+    "khudba": ["Imam Murat"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Bosnian community Islamic center",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 16,
+    "name": "Abu Huraira Mosque",
+    "jummha": ["12:00 PM"],
+    "address": "3055 Old Hwy 8, Minneapolis, MN 55418",
+    "city": "Minneapolis",
+    "latitude": 45.0294,
+    "longitude": -93.2533,
+    "khudba": ["Imam Ali"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Community mosque in northeast Minneapolis",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 17,
+    "name": "Irshad Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "6520 Edenvale Blvd # 110, Eden Prairie, MN 55346",
+    "city": "Eden Prairie",
+    "latitude": 44.8547,
+    "longitude": -93.4210,
+    "khudba": ["Dr. Irshad"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Islamic center and educational facility",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 18,
+    "name": "Al-Ihsan Mosque",
+    "jummha": ["12:00 PM"],
+    "address": "955 W Minnehaha Ave, St Paul, MN 55104",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.1257,
+    "khudba": ["Imam Ihsan"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Community mosque in St. Paul",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Bilal Oromo Dawa Center",
+    "jummha": ["12:00 PM"],
+    "address": "7200 University Ave NE, Minneapolis, MN 55432",
+    "city": "Minneapolis",
+    "latitude": 45.0863,
+    "longitude": -93.2632,
+    "khudba": ["Imam Bilal"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Oromo community Islamic center",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 20,
+    "name": "MAS Blaine Masjid",
+    "jummha": ["12:00 PM"],
+    "address": "12175 Aberdeen St NE, Blaine, MN 55449",
+    "city": "Blaine",
+    "latitude": 45.1607,
+    "longitude": -93.2349,
+    "khudba": ["Imam Abdur Rahman"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "MAS Islamic center in Blaine",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 21,
+    "name": "Islamic Dawah Center",
+    "jummha": ["12:00 PM"],
+    "address": "478 University Ave W, St Paul, MN 55103",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.1257,
+    "khudba": ["Imam Dawud"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Dawah and community center",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 22,
+    "name": "Eastern Twin Cities Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "12585 Hudson Rd S, Afton, MN 55001",
+    "city": "Afton",
+    "latitude": 44.9044,
+    "longitude": -92.7982,
+    "khudba": ["Imam Tariq"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Serving the eastern Twin Cities area",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 23,
+    "name": "Islamic Center of Minnesota",
+    "jummha": ["12:00 PM"],
+    "address": "1401 Gardena Ave NE, Fridley, MN 55432",
+    "city": "Fridley",
+    "latitude": 45.0863,
+    "longitude": -93.2632,
+    "khudba": ["Dr. Mahmoud"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Major Islamic center serving Minnesota",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 24,
+    "name": "Anjuman-e-Asghari",
+    "jummha": ["12:00 PM"],
+    "address": "10301 Jefferson Hwy, Brooklyn Park, MN 55445",
+    "city": "Brooklyn Park",
+    "latitude": 45.1094,
+    "longitude": -93.3563,
+    "khudba": ["Imam Asghar"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Shia Islamic center in Brooklyn Park",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 25,
+    "name": "Imam Husain Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "6120 Brooklyn Blvd, Minneapolis, MN 55429",
+    "city": "Minneapolis",
+    "latitude": 45.0594,
+    "longitude": -93.3563,
+    "khudba": ["Imam Husain"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Islamic center in north Minneapolis",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 26,
+    "name": "Eden Prairie Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "11543 K-Tel Dr, Minnetonka, MN 55343",
+    "city": "Minnetonka",
+    "latitude": 44.9211,
+    "longitude": -93.4687,
+    "khudba": ["Imam Farid"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Islamic center serving Eden Prairie and Minnetonka",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 27,
+    "name": "Masjid Baitul-Maqdis",
+    "jummha": ["12:00 PM"],
+    "address": "3680 Pheasant Ridge Dr NE, Blaine, MN 55449",
+    "city": "Blaine",
+    "latitude": 45.1607,
+    "longitude": -93.2349,
+    "khudba": ["Imam Maqdisi"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Community mosque in Blaine",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 28,
+    "name": "Darul Uloom Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "977 5th St E, St Paul, MN 55106",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.0900,
+    "khudba": ["Maulana Abdul Hafiz"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Islamic school and community center",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 29,
+    "name": "Dar-us-Salam Center",
+    "jummha": ["12:00 PM"],
+    "address": "190 River Ridge Cir S, Burnsville, MN 55337",
+    "city": "Burnsville",
+    "latitude": 44.7677,
+    "longitude": -93.2777,
+    "khudba": ["Imam Salam"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Peace and community center in Burnsville",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 30,
+    "name": "Assalam Mosque",
+    "jummha": ["12:00 PM"],
+    "address": "1460 Skillman Ave E, Maplewood, MN 55109",
+    "city": "Maplewood",
+    "latitude": 44.9537,
+    "longitude": -92.9954,
+    "khudba": ["Imam Assalam"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Community mosque in Maplewood",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 31,
+    "name": "Nusrat Mosque - Ahmadiyya Community",
+    "jummha": ["12:00 PM"],
+    "address": "11450 Robinson Dr, Coon Rapids, MN 55433",
+    "city": "Coon Rapids",
+    "latitude": 45.1200,
+    "longitude": -93.2870,
+    "khudba": ["Imam Nusrat"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Ahmadiyya Muslim community center",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 32,
+    "name": "Tawfiq Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "2900 N Lyndale Ave, Minneapolis, MN 55411",
+    "city": "Minneapolis",
+    "latitude": 44.9828,
+    "longitude": -93.2982,
+    "khudba": ["Imam Tawfiq"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "North Minneapolis community center",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 33,
+    "name": "Samaha Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "214 Holmes St S, Shakopee, MN 55379",
+    "city": "Shakopee",
+    "latitude": 44.7978,
+    "longitude": -93.5266,
+    "khudba": ["Imam Samaha"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Islamic center in Shakopee",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 34,
+    "name": "Somali Community Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "6001 78th Ave N, Brooklyn Park, MN 55443",
+    "city": "Brooklyn Park",
+    "latitude": 45.1094,
+    "longitude": -93.3563,
+    "khudba": ["Imam Omar"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Somali community center in Brooklyn Park",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 35,
+    "name": "Masjid As-Sunnah",
+    "jummha": ["12:00 PM"],
+    "address": "373 Pedersen St, St Paul, MN 55119",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.0900,
+    "khudba": ["Imam Sunnah"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Following the Sunnah in St. Paul",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 36,
+    "name": "Masjid Ibadur Rahman",
+    "jummha": ["12:00 PM"],
+    "address": "6001 78th Ave N, Brooklyn Park, MN 55443",
+    "city": "Brooklyn Park",
+    "latitude": 45.1094,
+    "longitude": -93.3563,
+    "khudba": ["Imam Rahman"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Serving Allah in Brooklyn Park",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 37,
+    "name": "Masjid Hamza Al-Mahmood Foundation",
+    "jummha": ["12:00 PM"],
+    "address": "5995 Timber Trail SE, Prior Lake, MN 55372",
+    "city": "Prior Lake",
+    "latitude": 44.7233,
+    "longitude": -93.4227,
+    "khudba": ["Imam Hamza"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Foundation mosque in Prior Lake",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 38,
+    "name": "Dar Al-Hikmah Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "2323 E Franklin Ave, Minneapolis, MN 55406",
+    "city": "Minneapolis",
+    "latitude": 44.9629,
+    "longitude": -93.2316,
+    "khudba": ["Imam Hikmah"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "House of wisdom in Minneapolis",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 39,
+    "name": "Masjid Al-Ansar",
+    "jummha": ["12:00 PM"],
+    "address": "4900 France Ave N, Minneapolis, MN 55429",
+    "city": "Minneapolis",
+    "latitude": 45.0594,
+    "longitude": -93.3563,
+    "khudba": ["Imam Ansar"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Supporting the community in Minneapolis",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 40,
+    "name": "MAS-Sahabah Cultural Association",
+    "jummha": ["12:00 PM"],
+    "address": "3435 Washington Dr #200, St Paul, MN 55122",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.0900,
+    "khudba": ["Imam Sahabah"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Companions cultural association",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 41,
+    "name": "Al Qurraa Masjid",
+    "jummha": ["12:00 PM"],
+    "address": "277 McKnight Rd S, St Paul, MN 55119",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.0900,
+    "khudba": ["Imam Qurraa"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Quran readers mosque in St. Paul",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 42,
+    "name": "Al Maa'uun Mosque",
+    "jummha": ["12:00 PM"],
+    "address": "1729 N Lyndale Ave, Minneapolis, MN 55411",
+    "city": "Minneapolis",
+    "latitude": 44.9828,
+    "longitude": -93.2982,
+    "khudba": ["Imam Maaun"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Small kindnesses mosque",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 43,
+    "name": "Central Minnesota Islamic Center",
+    "jummha": ["12:00 PM"],
+    "address": "390 4th Ave S, St Cloud, MN 56301",
+    "city": "St. Cloud",
+    "latitude": 45.5608,
+    "longitude": -94.1624,
+    "khudba": ["Imam Shaafi"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Major Islamic center serving Central Minnesota",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 44,
+    "name": "Quba Islamic Center Chaska",
+    "jummha": ["12:00 PM"],
+    "address": "415 N Chestnut St, Chaska, MN 55318",
+    "city": "Chaska",
+    "latitude": 44.7886,
+    "longitude": -93.6022,
+    "khudba": ["Imam Quba"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Islamic center in Chaska",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 45,
+    "name": "Madina Community Center",
+    "jummha": ["12:00 PM"],
+    "address": "501 State Hwy 13 #108, Burnsville, MN 55337",
+    "city": "Burnsville",
+    "latitude": 44.7677,
+    "longitude": -93.2777,
+    "khudba": ["Imam Madani"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Community center inspired by Madina",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 46,
+    "name": "Darul Iman Masjid",
+    "jummha": ["12:00 PM"],
+    "address": "291 McKnight Rd S, St Paul, MN 55119",
+    "city": "St. Paul",
+    "latitude": 44.9537,
+    "longitude": -93.0900,
+    "khudba": ["Imam Iman"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "House of faith mosque",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 47,
+    "name": "Al Hadi Association",
+    "jummha": ["12:00 PM"],
+    "address": "17685 Juniper Path Suite #313, Lakeville, MN 55044",
+    "city": "Lakeville",
+    "latitude": 44.6496,
+    "longitude": -93.2424,
+    "khudba": ["Imam Hadi"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Guide association in Lakeville",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 48,
+    "name": "Al-Rahma Mosque",
+    "jummha": ["12:00 PM"],
+    "address": "2647 Bloomington Ave, Minneapolis, MN 55407",
+    "city": "Minneapolis",
+    "latitude": 44.9407,
+    "longitude": -93.2465,
+    "khudba": ["Imam Rahma"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Mercy mosque in Minneapolis",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 49,
+    "name": "Dar Al-Hijrah",
+    "jummha": ["12:00 PM"],
+    "address": "504 Cedar Ave, Minneapolis, MN 55454",
+    "city": "Minneapolis",
+    "latitude": 44.9719,
+    "longitude": -93.2461,
+    "khudba": ["Imam Hijra"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Migration house in Minneapolis",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  },
+  {
+    "id": 50,
+    "name": "Umatul Islam",
+    "jummha": ["12:00 PM"],
+    "address": "3015 2nd Ave S, Minneapolis, MN 55408",
+    "city": "Minneapolis",
+    "latitude": 44.9407,
+    "longitude": -93.2717,
+    "khudba": ["Imam Umma"],
+    "image": "/images/MasjidNames/placeholder.jpg",
+    "notes": "Muslim community center",
+    "prayers": {
+      "fajr": "5:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "5:00 PM",
+      "maghrib": "8:30 PM",
+      "isha": "10:00 PM"
+    }
+  }
+]
+  

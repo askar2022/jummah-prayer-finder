@@ -1,0 +1,8 @@
+.list {
+    display: flex;
+    flex-direction: column; /* ✅ Stack cards vertically */
+    align-items: center;     /* ✅ Center cards horizontally */
+    gap: 16px;               /* ✅ Space between cards */
+    margin-top: 20px;
+  }
+  
