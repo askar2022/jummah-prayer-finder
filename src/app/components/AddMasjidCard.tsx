@@ -19,7 +19,7 @@ export default function AddMasjidCard() {
           </div>
           {/* Submit button in top right */}
           <a
-            href="https://docs.google.com/forms/d/1wmLS15RqCe5-QcaULd3HrVLXe9D01YUxeYoYiadhDkg/edit"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSftewOV6PTgh_dBRlB99ca89uM9DrhY9bc03o6dctMITp7p0A/viewform?usp=dialog"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 px-3 py-1.5 text-sm text-teal-600 border border-teal-200 rounded-md hover:bg-teal-50 transition-colors duration-200"

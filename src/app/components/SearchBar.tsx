@@ -14,13 +14,11 @@ interface Masjid {
   khudba: string[];
   image: string;
   notes: string;
-  prayers: {
-    fajr: string;
-    dhuhr: string;
-    asr: string;
-    maghrib: string;
-    isha: string;
-  };
+  fajr: string;
+  dhuhr: string;
+  asr: string;
+  maghrib: string;
+  isha: string;
 }
 
 interface Props {
@@ -32,21 +30,81 @@ interface Props {
 }
 
 function SearchBar({ searchTerm, setSearchTerm, setFiltered, setIsSearching, data }: Props) {
+  const matchesTimeSearch = (time: string, searchTerm: string): boolean => {
+    console.log('Matching time:', time, 'with search:', searchTerm);
+    
+    const timeClean = time.replace(/\s+/g, '').toLowerCase();
+    const searchClean = searchTerm.replace(/\s+/g, '').toLowerCase();
+    
+    // Direct substring match (existing functionality)
+    if (timeClean.includes(searchClean)) {
+      console.log('Direct match found!');
+      return true;
+    }
+    
+    // Enhanced time matching for formats like "12pm", "1pm", etc.
+    const timePattern = /^(\d{1,2}):?(\d{2})?\s*(am|pm)$/i;
+    const searchMatch = searchClean.match(timePattern);
+    
+    if (searchMatch) {
+      console.log('Search pattern matched:', searchMatch);
+      const [, searchHour, searchMinute, searchPeriod] = searchMatch;
+      const searchHourNum = parseInt(searchHour);
+      const searchPeriodLower = searchPeriod.toLowerCase();
+      
+      // Extract hour and period from the time - support multiple formats
+      const timeMatch = time.match(/^(\d{1,2}):?(\d{2})?\s*(AM|PM)$/i);
+      if (timeMatch) {
+        console.log('Time pattern matched:', timeMatch);
+        const [, timeHour, , timePeriod] = timeMatch;
+        const timeHourNum = parseInt(timeHour);
+        const timePeriodLower = timePeriod.toLowerCase();
+        
+        // Match if hour and period match (regardless of minutes)
+        if (searchHourNum === timeHourNum && searchPeriodLower === timePeriodLower) {
+          console.log('Hour and period match found!');
+          return true;
+        }
+      }
+    }
+    
+    return false;
+  };
+
   const handleSearch = () => {
     if (searchTerm.trim() === '') {
       setFiltered([]);
       setIsSearching(false);
     } else {
+      // Debug: Log the data structure
+      console.log('Search data:', data.length > 0 ? data[0] : 'No data');
+      console.log('Search term:', searchTerm);
+      
       const filtered = data.filter(
-        (masjid) =>
-          masjid.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          masjid.jummha.some((time: string) => 
-            time.replace(/\s+/g, '').toLowerCase().includes(
-              searchTerm.replace(/\s+/g, '').toLowerCase()
-            )
-          ) ||
-          masjid.address.toLowerCase().includes(searchTerm.toLowerCase())
+        (masjid) => {
+          // Debug: Log jummha data for each masjid
+          if (masjid.jummha) {
+            console.log(`${masjid.name} jummha:`, masjid.jummha, 'Type:', typeof masjid.jummha);
+          }
+          
+          const nameMatch = masjid.name.toLowerCase().includes(searchTerm.toLowerCase());
+          const addressMatch = masjid.address.toLowerCase().includes(searchTerm.toLowerCase());
+          
+          // Handle jummha field properly - it might be a string instead of array
+          let timeMatch = false;
+          if (masjid.jummha) {
+            if (Array.isArray(masjid.jummha)) {
+              timeMatch = masjid.jummha.some((time: string) => matchesTimeSearch(time, searchTerm));
+            } else if (typeof masjid.jummha === 'string') {
+              timeMatch = matchesTimeSearch(masjid.jummha, searchTerm);
+            }
+          }
+          
+          return nameMatch || timeMatch || addressMatch;
+        }
       );
+      
+      console.log('Filtered results:', filtered.length);
       setFiltered(filtered);
       setIsSearching(true);
     }

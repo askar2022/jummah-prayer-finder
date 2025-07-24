@@ -1,19 +1,135 @@
 'use client';
 
-import React from 'react';
-import { Clock, MapPin, Users, Settings, Plus, Edit3 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Clock, MapPin, Users, Plus, Edit3, LogOut } from 'lucide-react';
 import Card from './UI/Card';
 import Container from './UI/Container';
+import AdminMasjidForm from './AdminMasjidForm';
+import { supabase } from '../lib/supabase';
 
-export default function AdminDashboard() {
+interface Masjid {
+  id: number;
+  name: string;
+  jummha: string[];
+  address: string;
+  city: string;
+  latitude: number;
+  longitude: number;
+  khudba: string[];
+  image: string;
+  notes: string;
+  fajr: string;
+  dhuhr: string;
+  asr: string;
+  maghrib: string;
+  isha: string;
+  created_at?: string;
+  updated_at?: string;
+}
+
+interface AdminDashboardProps {
+  onLogout: () => void;
+}
+
+export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
+  const [masjids, setMasjids] = useState<Masjid[]>([]);
+  const [contacts, setContacts] = useState<Array<{id: string, name: string, email: string, phone?: string, comments?: string, submitted_at: string}>>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [showAddForm, setShowAddForm] = useState(false);
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      
+      // Fetch masjids
+      const { data: masjidData, error: masjidError } = await supabase
+        .from('masjids')
+        .select('*')
+        .order('name');
+
+      if (masjidError) throw masjidError;
+
+      // Fetch recent contacts
+      const { data: contactData, error: contactError } = await supabase
+        .from('contacts')
+        .select('*')
+        .order('submitted_at', { ascending: false })
+        .limit(5);
+
+      if (contactError) throw contactError;
+
+      setMasjids(masjidData || []);
+      setContacts(contactData || []);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setError('Failed to load data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleAddMasjidSuccess = () => {
+    setShowAddForm(false);
+    fetchData(); // Refresh the data
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <Container className="my-6">
+        <div className="text-center py-12">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading dashboard...</p>
+        </div>
+      </Container>
+    );
+  }
+
+  if (error) {
+    return (
+      <Container className="my-6">
+        <div className="text-center py-12">
+          <p className="text-red-600 mb-4">{error}</p>
+          <button 
+            onClick={fetchData}
+            className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg"
+          >
+            Try Again
+          </button>
+        </div>
+      </Container>
+    );
+  }
+
   return (
     <Container className="my-6">
       <div className="space-y-6">
-        {/* Welcome Header */}
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-          <p className="text-gray-600">Manage your masjid&apos;s information and prayer times</p>
+        {/* Header with Logout */}
+        <div className="flex justify-between items-center">
+          <div className="text-center flex-1">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
+            <p className="text-gray-600">Manage your masjid&apos;s information and prayer times</p>
+          </div>
+          <button
+            onClick={onLogout}
+            className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+          >
+            <LogOut className="w-4 h-4" />
+            Logout
+          </button>
         </div>
+
+        {/* Show Add Masjid Form if active */}
+        {showAddForm && (
+          <AdminMasjidForm
+            onSuccess={handleAddMasjidSuccess}
+            onCancel={() => setShowAddForm(false)}
+          />
+        )}
 
         {/* Quick Stats */}
         <div className="grid md:grid-cols-3 gap-6">
@@ -23,8 +139,8 @@ export default function AdminDashboard() {
                 <Clock className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Prayer Times</h3>
-                <p className="text-sm text-gray-600">Manage Jummah schedules</p>
+                <h3 className="font-semibold text-gray-900">Total Masjids</h3>
+                <p className="text-2xl font-bold text-teal-600">{masjids.length}</p>
               </div>
             </div>
           </Card>
@@ -35,8 +151,8 @@ export default function AdminDashboard() {
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Masjid Info</h3>
-                <p className="text-sm text-gray-600">Update details & location</p>
+                <h3 className="font-semibold text-gray-900">Contact Messages</h3>
+                <p className="text-2xl font-bold text-blue-600">{contacts.length}</p>
               </div>
             </div>
           </Card>
@@ -47,87 +163,70 @@ export default function AdminDashboard() {
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Community</h3>
-                <p className="text-sm text-gray-600">View congregation data</p>
+                <h3 className="font-semibold text-gray-900">Cities Covered</h3>
+                <p className="text-2xl font-bold text-green-600">
+                  {[...new Set(masjids.map(m => m.city).filter(Boolean))].length}
+                </p>
               </div>
             </div>
           </Card>
         </div>
 
-        {/* Management Actions */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Prayer Times Management */}
-          <Card className="p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-gray-900">Prayer Times</h2>
-              <Plus className="w-5 h-5 text-teal-600" />
-            </div>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                <span className="font-medium">First Jummah</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-teal-600 font-semibold">12:30 PM</span>
-                  <Edit3 className="w-4 h-4 text-gray-400 cursor-pointer hover:text-gray-600" />
-                </div>
-              </div>
-              <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                <span className="font-medium">Second Jummah</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-teal-600 font-semibold">1:45 PM</span>
-                  <Edit3 className="w-4 h-4 text-gray-400 cursor-pointer hover:text-gray-600" />
-                </div>
-              </div>
-            </div>
-            <button className="w-full mt-4 py-2 px-4 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition-colors">
-              Update Prayer Times
-            </button>
-          </Card>
-
-          {/* Masjid Information */}
-          <Card className="p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-gray-900">Masjid Information</h2>
-              <Settings className="w-5 h-5 text-blue-600" />
-            </div>
-            <div className="space-y-3">
-              <div>
-                <label className="text-sm font-medium text-gray-700">Masjid Name</label>
-                <p className="text-gray-900">Masjid Al-Noor</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">Address</label>
-                <p className="text-gray-900">123 Main St, Minneapolis</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-700">Contact</label>
-                <p className="text-gray-900">(612) 555-0123</p>
-              </div>
-            </div>
-            <button className="w-full mt-4 py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
-              Edit Information
-            </button>
-          </Card>
-        </div>
-
-        {/* Recent Activity */}
+        {/* Recent Masjids */}
         <Card className="p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Recent Activity</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-semibold text-gray-900">Recent Masjids</h2>
+            <button 
+              onClick={() => setShowAddForm(true)}
+              className="flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg"
+            >
+              <Plus className="w-4 h-4" />
+              Add Masjid
+            </button>
+          </div>
           <div className="space-y-3">
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-sm text-gray-700">Prayer times updated for Friday, January 5th</span>
-              <span className="text-xs text-gray-500 ml-auto">2 hours ago</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                  <span className="text-sm text-gray-700">Masjid information updated</span>
-              <span className="text-xs text-gray-500 ml-auto">1 day ago</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-              <span className="text-sm text-gray-700">New prayer time slot added</span>
-              <span className="text-xs text-gray-500 ml-auto">3 days ago</span>
-            </div>
+            {masjids.slice(0, 5).map((masjid) => (
+              <div key={masjid.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div>
+                  <h3 className="font-medium text-gray-900">{masjid.name}</h3>
+                  <p className="text-sm text-gray-600">{masjid.address}, {masjid.city}</p>
+                  <p className="text-xs text-gray-500">
+                    Jummah: {masjid.jummha.join(', ')}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button className="p-1 text-gray-400 hover:text-gray-600">
+                    <Edit3 className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        {/* Recent Contacts */}
+        <Card className="p-6">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Recent Contact Messages</h2>
+          <div className="space-y-3">
+            {contacts.length > 0 ? contacts.map((contact) => (
+              <div key={contact.id} className="p-3 bg-gray-50 rounded-lg">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="font-medium text-gray-900">{contact.name}</h3>
+                    <p className="text-sm text-gray-600">{contact.email}</p>
+                    {contact.phone && <p className="text-sm text-gray-600">{contact.phone}</p>}
+                    {contact.comments && (
+                      <p className="text-sm text-gray-700 mt-2">{contact.comments}</p>
+                    )}
+                  </div>
+                  <span className="text-xs text-gray-500">
+                    {new Date(contact.submitted_at).toLocaleDateString()}
+                  </span>
+                </div>
+              </div>
+            )) : (
+              <p className="text-gray-500 text-center py-4">No contact messages yet</p>
+            )}
           </div>
         </Card>
       </div>

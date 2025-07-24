@@ -4,16 +4,57 @@ import React, { useState } from 'react';
 import { Lock, Mail, UserCheck } from 'lucide-react';
 import Card from './UI/Card';
 import Container from './UI/Container';
+import { supabase } from '../lib/supabase';
 
-export default function AdminLogin() {
+interface AdminLoginProps {
+  onLoginSuccess: () => void;
+}
+
+export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add authentication logic here
-    console.log('Login attempt:', { email, password });
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      if (isLogin) {
+        // Sign in existing user
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+
+        if (error) throw error;
+
+        if (data.user) {
+          onLoginSuccess();
+        }
+      } else {
+        // Sign up new user
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+        });
+
+        if (error) throw error;
+
+        if (data.user) {
+          setError('Please check your email to confirm your account, then sign in.');
+          setIsLogin(true);
+        }
+      }
+    } catch (error: unknown) {
+      console.error('Authentication error:', error);
+      setError(error instanceof Error ? error.message : 'Authentication failed');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -55,6 +96,13 @@ export default function AdminLogin() {
               Sign Up
             </button>
           </div>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-red-700 text-sm">{error}</p>
+            </div>
+          )}
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -99,21 +147,31 @@ export default function AdminLogin() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              disabled={isLoading}
+              className="w-full bg-teal-600 hover:bg-teal-700 disabled:bg-teal-300 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 flex items-center justify-center gap-2"
             >
-              {isLogin ? 'Sign In' : 'Create Account'}
+              {isLoading ? (
+                <>
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                  {isLogin ? 'Signing In...' : 'Signing Up...'}
+                </>
+              ) : (
+                <>
+                  {isLogin ? 'Sign In' : 'Create Account'}
+                </>
+              )}
             </button>
           </form>
 
           {/* Forgot Password */}
           {isLogin && (
             <div className="text-center mt-4">
-              <a
-                href="#"
+              <button
+                type="button"
                 className="text-sm text-teal-600 hover:text-teal-700 font-medium"
               >
                 Forgot your password?
-              </a>
+              </button>
             </div>
           )}
         </Card>

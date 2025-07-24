@@ -1,11 +1,54 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AdminLogin from '../components/AdminLogin';
+import AdminDashboard from '../components/AdminDashboard';
+import { supabase } from '../lib/supabase';
 
 export default function AdminPage() {
-  const showLogin = true;
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if user is already logged in
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setIsAuthenticated(!!session);
+      setIsLoading(false);
+    };
+
+    checkAuth();
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setIsAuthenticated(!!session);
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleLoginSuccess = () => {
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setIsAuthenticated(false);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -23,13 +66,10 @@ export default function AdminPage() {
 
       {/* Main Content */}
       <main className="flex-1">
-        {showLogin ? (
-          <AdminLogin />
+        {isAuthenticated ? (
+          <AdminDashboard onLogout={handleLogout} />
         ) : (
-          <div className="max-w-4xl mx-auto p-6">
-            <h1 className="text-2xl font-bold text-gray-900 mb-6">Admin Dashboard</h1>
-            <p className="text-gray-600">Welcome to the admin panel!</p>
-          </div>
+          <AdminLogin onLoginSuccess={handleLoginSuccess} />
         )}
       </main>
     </div>

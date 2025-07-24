@@ -16,13 +16,11 @@ interface Masjid {
   khudba: string[];
   image: string;
   notes: string;
-  prayers: {
-    fajr: string;
-    dhuhr: string;
-    asr: string;
-    maghrib: string;
-    isha: string;
-  };
+  fajr: string;
+  dhuhr: string;
+  asr: string;
+  maghrib: string;
+  isha: string;
 }
 
 interface Props {
